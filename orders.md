@@ -1,6 +1,6 @@
 # Fy! Chatbot API - Order
 
-## overview
+## Overview
 <a name="overview"></a>
 The Fy! Chatbot API allows to retrieve latest information about the order.
 
@@ -13,7 +13,7 @@ The Fy! Chatbot API allows to retrieve latest information about the order.
 * Returns: `application/json`
 
 ### Operations
-* [getOrder] (#getorder)
+* [getOrder](#getorder)
 
 ----
 
@@ -105,9 +105,9 @@ An example of a successful response from the [getOrder](#getorder) operation:
 |Name|Description|Schema|
 |-|-|-|
 |**orderReference**         <br>*required*|The reference for a specific Fy! order: an "SO-" prefix followed by a series of numbers. |string|
-|**productName**            <br>*optional*|Name for one or more products associated with the order. |string|
-|**status**                 <br>*optional*|The order's current status.|string|
-|**isPoD**                  <br>*required*|Flag to indicate is order has PoD products or not.|string|
+|**productName**            <br>*optional*|An array containing names for one or more products associated with the order. |string|
+|**status**                 <br>*required*|The order's current status. Available statuses:<br> - pending, <br> - acknowledged, <br> - shipped.|string|
+|**isPoD**                  <br>*required*|Flag to indicate if order has PoD products or not.|boolean|
 |**deliveryAddressCountry** <br>*required*|The recipient's country.|string|
 |**shippedOn**              <br>*optional*|The (ISO-8601) datetime when the order was shipped.|string|
 |**courier**                <br>*optional*|Courier name.|string|
