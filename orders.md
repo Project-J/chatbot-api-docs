@@ -50,7 +50,7 @@ An example of a successful response from the [getOrder](#getorder) operation:
   "productName": ["Product"],
   "status": "shipped",
   "isPoD": false,
-  "deliveryAffressCountry": "UK",
+  "deliveryAddressCountry": "UK",
   "shippedOn": "2021-04-08T00:00:00.00Z",
   "courier": "dhl"
   }
@@ -62,6 +62,7 @@ An example of a successful response from the [getOrder](#getorder) operation:
 |`200`|Success.|[GetOrderResponse](#getordersresponse)|
 |`400`|Missing or invalid parameters.|[GetOrderResponse](#getordersresponse)|
 |`403`|Access forbidden.|[GetOrderResponse](#getordersresponse)|
+|`404`|Not Found.|[GetOrderResponse](#getordersresponse)
 |`500`|Server error.|[GetOrderResponse](#getordersresponse)|
 
 ----
