@@ -52,7 +52,10 @@ An example of a successful response from the [getOrder](#getorder) operation:
   "isPoD": false,
   "deliveryAddressCountry": "UK",
   "shippedOn": "2021-04-08T00:00:00.00Z",
-  "courier": "dhl"
+  "courier": "dhl",
+  "deliveryStatus": "InTransit",
+  "deliveryMessage": "On its way to the courier",
+  "deliveryStatusTime": "2021-04-10T21:59:00Z"
   }
 }
 ```
@@ -97,7 +100,10 @@ An example of a successful response from the [getOrder](#getorder) operation:
  "isPoD"                  <boolean>
  "deliveryAddressCountry" <string>
  "shippedOn"              <string>
- "courier"                <string>}
+ "courier"                <string>
+ "deliveryStatus"         <string>
+ "deliveryMessage"        <string>
+ "deliveryStatusTime"     <string>}
 ```
 
 <details>
@@ -112,5 +118,8 @@ An example of a successful response from the [getOrder](#getorder) operation:
 |**deliveryAddressCountry** <br>*required*|The recipient's country.|string|
 |**shippedOn**              <br>*optional*|The (ISO-8601) datetime when the order was shipped.|string|
 |**courier**                <br>*optional*|Courier name.|string|
+|**deliveryStatus**         <br>*optional*|Current status of the delivery.|string|
+|**deliveryMessage**        <br>*optional*|The latest checkpoint message.|string|
+|**deliveryStatusTime**     <br>*optional*|The latest checkpoint (ISO-8601) datetime.|string|
 
 </details>
