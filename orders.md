@@ -47,7 +47,7 @@ An example of a successful response from the [getOrder](#getorder) operation:
 ```json
 {"data": {
   "orderReference": "SO-1234",
-  "productName": ["Product"],
+  "productName": "Flower print",
   "status": "shipped",
   "isPoD": false,
   "deliveryAddressCountry": "UK",
@@ -106,7 +106,7 @@ An example of a successful response from the [getOrder](#getorder) operation:
 |Name|Description|Schema|
 |-|-|-|
 |**orderReference**         <br>*required*|The reference for a specific Fy! order: an "SO-" prefix followed by a series of numbers. |string|
-|**productName**            <br>*optional*|An array containing names for one or more products associated with the order. |string|
+|**productName**            <br>*optional*|The name of the product associated with the order. |string|
 |**status**                 <br>*required*|The order's current status. Available statuses:<br> - pending, <br> - acknowledged, <br> - shipped.|string|
 |**isPoD**                  <br>*required*|Flag to indicate if order has PoD products or not.|boolean|
 |**deliveryAddressCountry** <br>*required*|The recipient's country.|string|
