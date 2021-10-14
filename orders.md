@@ -55,7 +55,8 @@ An example of a successful response from the [getOrder](#getorder) operation:
   "courier": "dhl",
   "deliveryStatus": "InTransit",
   "deliveryMessage": "On its way to the courier",
-  "deliveryStatusTime": "2021-04-10T21:59:00Z"
+  "deliveryStatusTime": "2021-04-10T21:59:00Z",
+  "trackingUrl": "http://webtrack.dhlglobalmail.com/?mobile=&trackingnumber=123ABC"
   }
 }
 ```
@@ -103,7 +104,8 @@ An example of a successful response from the [getOrder](#getorder) operation:
  "courier"                <string>
  "deliveryStatus"         <string>
  "deliveryMessage"        <string>
- "deliveryStatusTime"     <string>}
+ "deliveryStatusTime"     <string>
+ "trackingUrl"            <string>}
 ```
 
 <details>
@@ -121,5 +123,6 @@ An example of a successful response from the [getOrder](#getorder) operation:
 |**deliveryStatus**         <br>*optional*|Current status of the delivery.|string|
 |**deliveryMessage**        <br>*optional*|The latest checkpoint message.|string|
 |**deliveryStatusTime**     <br>*optional*|The latest checkpoint (ISO-8601) datetime.|string|
+|**trackingUrl**            <br>*optional*|Official tracking url of the courier.|string|
 
 </details>
