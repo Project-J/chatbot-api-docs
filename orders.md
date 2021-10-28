@@ -184,7 +184,7 @@ An array containing one or more [OrderLine](#orderline).
 <a name="shipments"></a>
 
 ```
-[<Shipments>, ...]
+[<Shipment>, ...]
 ```
 
 An array containing one or more [Shipment](#shipment).
