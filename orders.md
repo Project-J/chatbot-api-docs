@@ -56,7 +56,22 @@ An example of a successful response from the [getOrder](#getorder) operation:
   "deliveryStatus": "InTransit",
   "deliveryMessage": "On its way to the courier",
   "deliveryStatusTime": "2021-04-10T21:59:00Z",
-  "trackingUrl": "http://webtrack.dhlglobalmail.com/?mobile=&trackingnumber=123ABC"
+  "trackingUrl": "http://webtrack.dhlglobalmail.com/?mobile=&trackingnumber=123ABC",
+  "discountApplied": "20%",
+  "orderLines": [{
+    "orderLineId": 1234,
+    "productName": "Flower print",
+    "quantity": 1,
+    "discountApplied": "20%",
+    "shipments": [{
+        "courier": "dhl",
+        "shippedOn": "2021-04-08T00:00:00.00Z",
+        "deliveryStatus": "InTransit",
+        "deliveryMessage": "On its way to the courier",
+        "deliveryStatusTime": "2021-04-10T21:59:00Z",
+        "trackingUrl": "http://webtrack.dhlglobalmail.com/?mobile=&trackingnumber=123ABC"
+      }]
+    }]
   }
 }
 ```
@@ -105,7 +120,10 @@ An example of a successful response from the [getOrder](#getorder) operation:
  "deliveryStatus"         <string>
  "deliveryMessage"        <string>
  "deliveryStatusTime"     <string>
- "trackingUrl"            <string>}
+ "trackingUrl"            <string>
+ "discountApplied"        <string>
+ "orderLines"             <OrderLines>
+ }
 ```
 
 <details>
@@ -123,6 +141,76 @@ An example of a successful response from the [getOrder](#getorder) operation:
 |**deliveryStatus**         <br>*optional*|Current status of the delivery.|string|
 |**deliveryMessage**        <br>*optional*|The latest checkpoint message.|string|
 |**deliveryStatusTime**     <br>*optional*|The latest checkpoint (ISO-8601) datetime.|string|
+|**trackingUrl**            <br>*optional*|Official tracking url of the courier.|string|
+|**discountApplied**        <br>*optional*|Discount applied to the order.|string|
+|**orderLines**             <br>*required*|One or more orderlines associated with the order.|[OrderLines](#orderlines)|
+
+</details>
+
+### OrderLines
+<a name="orderlines"></a>
+
+```
+[<OrderLine>, ...]
+```
+
+An array containing one or more [OrderLine](#orderline).
+
+### OrderLine
+<a name="orderline"></a>
+
+```
+{"orderLineId"     <number>
+ "productName"     <string>
+ "quantity"        <number>
+ "discountApplied" <string>
+ "shipments"       <Shipments>}
+```
+
+<details>
+  <summary>View descriptions</summary>
+
+|Name|Description|Schema|
+|-|-|-|
+|**orderLineId**     <br>*required*|The identification number of the orderline.|number|
+|**productName**     <br>*required*|The name of the product associated with the orderline.|string|
+|**quantity**        <br>*required*|The quantity of items in the orderline.|number|
+|**discountApplied** <br>*optional*|Discount in percents applied to the product.|string|
+|**shipments**       <br>*optional*|One or more shipment updates for the orderline.|[Shipments](#shipments)|
+
+</details>
+
+### Shipments
+<a name="shipments"></a>
+
+```
+[<Shipment>, ...]
+```
+
+An array containing one or more [Shipment](#shipment).
+
+### Shipment
+<a name="shipment"></a>
+
+```
+{"courier"            <string>
+ "shippedOn"          <string>
+ "deliveryStatus"     <string>
+ "deliveryMessage"    <string>
+ "deliveryStatusTime" <string>
+ "trackingUrl"        <string>}
+```
+
+<details>
+  <summary>View descriptions</summary>
+
+|Name|Description|Schema|
+|-|-|-|
+|**courier**                <br>*optional*|Courier name.|string|
+|**shippedOn**              <br>*optional*|The (ISO-8601) datetime when the order was shipped.|string|
+|**deliveryStatus**         <br>*optional*|Status of the delivery.|string|
+|**deliveryMessage**        <br>*optional*|The checkpoint message.|string|
+|**deliveryStatusTime**     <br>*optional*|The checkpoint (ISO-8601) datetime.|string|
 |**trackingUrl**            <br>*optional*|Official tracking url of the courier.|string|
 
 </details>
