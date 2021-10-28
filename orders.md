@@ -143,7 +143,7 @@ An example of a successful response from the [getOrder](#getorder) operation:
 |**deliveryStatusTime**     <br>*optional*|The latest checkpoint (ISO-8601) datetime.|string|
 |**trackingUrl**            <br>*optional*|Official tracking url of the courier.|string|
 |**discountApplied**        <br>*optional*|Discount applied to the order.|string|
-|**orderLines**             <br>*required*|On or more orderlines associated with the order.|[OrderLines](#orderlines)|
+|**orderLines**             <br>*required*|One or more orderlines associated with the order.|[OrderLines](#orderlines)|
 
 </details>
 
