@@ -58,11 +58,13 @@ An example of a successful response from the [getOrder](#getorder) operation:
   "deliveryStatusTime": "2021-04-10T21:59:00Z",
   "trackingUrl": "http://webtrack.dhlglobalmail.com/?mobile=&trackingnumber=123ABC",
   "discountApplied": "20%",
+  "orderProcessingDays": 2,
   "orderLines": [{
     "orderLineId": 1234,
     "productName": "Flower print",
     "quantity": 1,
     "discountApplied": "20%",
+    "orderProcessingDays": 2,
     "shipments": [{
         "courier": "dhl",
         "shippedOn": "2021-04-08T00:00:00.00Z",
@@ -122,6 +124,7 @@ An example of a successful response from the [getOrder](#getorder) operation:
  "deliveryStatusTime"     <string>
  "trackingUrl"            <string>
  "discountApplied"        <string>
+ "orderProcessingDays"    <number>
  "orderLines"             <OrderLines>
  }
 ```
@@ -143,6 +146,7 @@ An example of a successful response from the [getOrder](#getorder) operation:
 |**deliveryStatusTime**     <br>*optional*|The latest checkpoint (ISO-8601) datetime.|string|
 |**trackingUrl**            <br>*optional*|Official tracking url of the courier.|string|
 |**discountApplied**        <br>*optional*|Discount applied to the order.|string|
+|**orderProcessingDays**.   <br>*optional*|Typical/expected number of days for the order to be processed.|number|
 |**orderLines**             <br>*required*|One or more orderlines associated with the order.|[OrderLines](#orderlines)|
 
 </details>
@@ -160,11 +164,12 @@ An array containing one or more [OrderLine](#orderline).
 <a name="orderline"></a>
 
 ```
-{"orderLineId"     <number>
- "productName"     <string>
- "quantity"        <number>
- "discountApplied" <string>
- "shipments"       <Shipments>}
+{"orderLineId"         <number>
+ "productName"         <string>
+ "quantity"            <number>
+ "discountApplied"     <string>
+ "orderProcessingDays" <number>
+ "shipments"           <Shipments>}
 ```
 
 <details>
@@ -172,11 +177,12 @@ An array containing one or more [OrderLine](#orderline).
 
 |Name|Description|Schema|
 |-|-|-|
-|**orderLineId**     <br>*required*|The identification number of the orderline.|number|
-|**productName**     <br>*required*|The name of the product associated with the orderline.|string|
-|**quantity**        <br>*required*|The quantity of items in the orderline.|number|
-|**discountApplied** <br>*optional*|Discount in percents applied to the product.|string|
-|**shipments**       <br>*optional*|One or more shipment updates for the orderline.|[Shipments](#shipments)|
+|**orderLineId**         <br>*required*|The identification number of the orderline.|number|
+|**productName**         <br>*required*|The name of the product associated with the orderline.|string|
+|**quantity**            <br>*required*|The quantity of items in the orderline.|number|
+|**discountApplied**     <br>*optional*|Discount in percents applied to the product.|string|
+|**orderProcessingDays** <br>*optional*|Typical/expected number of days for the order to be processed.|number|
+|**shipments**           <br>*optional*|One or more shipment updates for the orderline.|[Shipments](#shipments)|
 
 </details>
 
