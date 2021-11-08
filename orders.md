@@ -53,7 +53,7 @@ An example of a successful response from the [getOrder](#getorder) operation:
   "deliveryAddressCountry": "UK",
   "shippedOn": "2021-04-08T00:00:00.00Z",
   "courier": "dhl",
-  "deliveryStatus": "InTransit",
+  "deliveryStatus": "in-transit",
   "deliveryMessage": "On its way to the courier",
   "deliveryStatusTime": "2021-04-10T21:59:00Z",
   "trackingUrl": "http://webtrack.dhlglobalmail.com/?mobile=&trackingnumber=123ABC",
